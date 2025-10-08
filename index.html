@@ -54,6 +54,20 @@
             animation: pulse 4s ease-in-out infinite;
         }
 
+        @media (max-width: 768px) {
+            .glow {
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .glow {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
         @keyframes pulse {
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
             50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
@@ -61,10 +75,19 @@
 
         .scene {
             position: relative;
-            width: 1200px;
+            width: 100%;
+            max-width: 1200px;
             height: 700px;
             perspective: 2000px;
             transform-style: preserve-3d;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .scene {
+                height: 500px;
+                padding: 0 10px;
+            }
         }
 
         .complex {
@@ -128,6 +151,53 @@
             right: 0;
             animation-delay: 2s;
             transform: translateZ(-300px) scale(0.7);
+        }
+
+        /* Responsive untuk mobile */
+        @media (max-width: 768px) {
+            .candi-1 { 
+                left: -80px;
+                transform: translateZ(-300px) scale(0.4);
+            }
+            
+            .candi-2 { 
+                left: 30px;
+                transform: translateZ(-150px) scale(0.5);
+            }
+            
+            .candi-3 { 
+                transform: translateX(-50%) translateZ(50px) scale(0.7);
+            }
+            
+            .candi-4 { 
+                right: 30px;
+                transform: translateZ(-150px) scale(0.5);
+            }
+            
+            .candi-5 { 
+                right: -80px;
+                transform: translateZ(-300px) scale(0.4);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .candi-1, .candi-5 { 
+                display: none;
+            }
+            
+            .candi-2 { 
+                left: 0;
+                transform: translateZ(-100px) scale(0.45);
+            }
+            
+            .candi-3 { 
+                transform: translateX(-50%) translateZ(30px) scale(0.6);
+            }
+            
+            .candi-4 { 
+                right: 0;
+                transform: translateZ(-100px) scale(0.45);
+            }
         }
 
         /* Base dengan glow */
@@ -371,6 +441,13 @@
             z-index: 1000;
         }
 
+        @media (max-width: 768px) {
+            .controls {
+                bottom: 20px;
+                gap: 10px;
+            }
+        }
+
         button {
             padding: 18px 40px;
             font-size: 16px;
@@ -388,6 +465,21 @@
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             font-weight: 600;
             letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            button {
+                padding: 14px 28px;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
         }
 
         button:hover {
